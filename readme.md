@@ -18,6 +18,8 @@ Response:
 
 ```
 {
-"address": "福井県 敦賀市"
+  prefecture: "山梨県",
+  city: "南都留郡山中湖村",
+  town: "平野"
 }
 ```

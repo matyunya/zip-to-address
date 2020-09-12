@@ -16,7 +16,7 @@ import (
 type Address struct {
 	Prefecture string `json:"prefecture"`
 	City       string `json:"city"`
-	TownArea   string `json:"townArea"`
+	Town       string `json:"town"`
 }
 
 var (
@@ -64,7 +64,7 @@ func readCsv(filename string) error {
 		m[line[2]] = Address{
 			Prefecture: line[6],
 			City:       line[7],
-			TownArea:   line[8],
+			Town:       line[8],
 		}
 	}
 
@@ -84,7 +84,7 @@ func handler(ctx *fasthttp.RequestCtx) {
 		return
 	}
 
-	jsonData, err := json.Marshal(map[string]Address{"address": m[index]})
+	jsonData, err := json.Marshal(m[index])
 	if err != nil {
 		log.Println(err)
 	}
